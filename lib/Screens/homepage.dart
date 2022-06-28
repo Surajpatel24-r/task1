@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task1/Screens/login_signup/login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late final String _username;
+  String _username = "";
 
   @override
   void initState() {
@@ -26,14 +27,23 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color.fromARGB(194, 8, 248, 88),
         centerTitle: true,
         actions: [
-          PopupMenuButton(
-              itemBuilder: (context) => [
-                    const PopupMenuItem(child: Text('Restart')),
-                    const PopupMenuItem(child: Text('New Group')),
-                    const PopupMenuItem(child: Text('New Broadcast')),
-                    const PopupMenuItem(child: Text('Linked devices')),
-                    const PopupMenuItem(child: Text('Exit')),
-                  ]),
+          IconButton(
+              onPressed: () {
+                Navigator.pop(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()));
+              },
+              icon: Icon(Icons.logout))
+
+          // PopupMenuButton(
+          //     itemBuilder: (context) => [
+          //           const PopupMenuItem(child: Text('Restart')),
+          //           const PopupMenuItem(child: Text('New Group')),
+          //           const PopupMenuItem(child: Text('New Broadcast')),
+          //           const PopupMenuItem(child: Text('Linked devices')),
+          //           const PopupMenuItem(child: Text('Exit')),
+          //         ]),
           // IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
         ],
       ),
