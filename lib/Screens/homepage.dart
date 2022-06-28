@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late final String _username;
+
+  @override
+  void initState() async {
+    super.initState();
+    final prefs = await SharedPreferences.getInstance();
+    _username = prefs.getString('username') as String;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +38,13 @@ class HomePage extends StatelessWidget {
           // IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
         ],
       ),
-      body: const Center(
-        child: Text("Welcome Suraj"),
+      body: Center(
+        child: Text("Welcome $_username "),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const [
+          children: [
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 21, 198, 9),

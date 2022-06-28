@@ -1,6 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:task1/Screens/login_signup/signup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../homepage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -86,8 +88,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               backgroundColor: Color(0xff4c505b),
                               child: IconButton(
                                   color: Colors.white,
-                                  onPressed: () {
+                                  onPressed: () async {
                                     if (_formkey.currentState!.validate()) {
+                                      final prefs =
+                                          await SharedPreferences.getInstance();
+                                      await prefs.setString(
+                                          'username', _emailController.text);
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const HomePage()));
                                       print('form is validated');
                                     } else {
                                       print('form is not validated');
