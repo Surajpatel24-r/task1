@@ -12,10 +12,9 @@ class _HomePageState extends State<HomePage> {
   late final String _username;
 
   @override
-  void initState() async {
+  void initState() {
     super.initState();
-    final prefs = await SharedPreferences.getInstance();
-    _username = prefs.getString('username') as String;
+    getUsername();
   }
 
   @override
@@ -73,5 +72,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  void getUsername() async {
+    final prefs = await SharedPreferences.getInstance();
+    _username = prefs.getString('username') as String;
   }
 }
