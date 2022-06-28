@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task1/Screens/account.dart';
 import 'package:task1/Screens/login_signup/login.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,10 +38,7 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.logout))
 
           // PopupMenuButton(
-          //     itemBuilder: (context) => [
-          //           const PopupMenuItem(child: Text('Restart')),
-          //           const PopupMenuItem(child: Text('New Group')),
-          //           const PopupMenuItem(child: Text('New Broadcast')),
+          //     itemBuilder: (context) => [roadcast')),
           //           const PopupMenuItem(child: Text('Linked devices')),
           //           const PopupMenuItem(child: Text('Exit')),
           //         ]),
@@ -67,13 +65,39 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
+              title: Center(child: Text('Account')),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AccountScreen(),
+                    ));
+              },
+            ),
+            Divider(
+              height: 8,
+              color: Colors.black,
+            ),
+            ListTile(
               title: Center(child: Text('Pyments')),
+            ),
+            Divider(
+              height: 8,
+              color: Colors.black,
             ),
             ListTile(
               title: Center(child: Text('Visitors')),
             ),
+            Divider(
+              height: 8,
+              color: Colors.black,
+            ),
             ListTile(
               title: Center(child: Text('Credits')),
+            ),
+            Divider(
+              height: 8,
+              color: Colors.black,
             ),
             ListTile(
               title: Center(child: Text('Edit')),
@@ -87,5 +111,6 @@ class _HomePageState extends State<HomePage> {
   void getUsername() async {
     final prefs = await SharedPreferences.getInstance();
     _username = prefs.getString('username') as String;
+    setState(() {}); //USe a Rebuild The App
   }
 }

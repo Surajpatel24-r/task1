@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:task1/Screens/login_signup/forgetpassword.dart';
 import 'package:task1/Screens/login_signup/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../homepage.dart';
@@ -22,16 +23,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images/login.png'), fit: BoxFit.cover)),
+              image: AssetImage('images/login3d.png'), fit: BoxFit.cover)),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 35, top: 130),
-                child: const Text('Welcome\nBack',
-                    style: TextStyle(color: Colors.white, fontSize: 33)),
-              ),
+                  // padding: const EdgeInsets.only(left: 35, top: 130),
+                  // child: const Text('Welcome\nBack',
+                  //     style: TextStyle(color: Colors.red, fontSize: 33)),
+                  ),
               SingleChildScrollView(
                 child: Container(
                   padding: EdgeInsets.only(
@@ -133,7 +134,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                       color: Color(0xff4c505b)),
                                 )),
                             TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ForgetPasswardScreen()));
+                                },
                                 child: const Text(
                                   'Forgot Password',
                                   style: TextStyle(

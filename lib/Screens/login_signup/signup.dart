@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:task1/Screens/login_signup/login.dart';
 
 import '../homepage.dart';
 
@@ -157,7 +158,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const HomePage()));
+                                                  const LoginScreen()));
                                       print('form is validated');
                                     } else {
                                       print('form is not validated');
