@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task1/Screens/homepage.dart';
-import 'package:task1/Screens/profile.dart';
+import 'package:task1/Screens/drawerscreen/profile.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({Key? key}) : super(key: key);

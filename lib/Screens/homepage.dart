@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:task1/Screens/account.dart';
+import 'package:task1/Screens/drawerscreen/account.dart';
+import 'package:task1/Screens/drawerscreen/payments.dart';
 import 'package:task1/Screens/login_signup/login.dart';
 
 class HomePage extends StatefulWidget {
@@ -83,6 +84,13 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               title: Center(child: Text('Pyments')),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaymentScreen(),
+                    ));
+              },
             ),
             Divider(
               height: 8,
