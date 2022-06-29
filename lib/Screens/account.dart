@@ -19,7 +19,7 @@ class _AccountScreenState extends State<AccountScreen> {
           appBar: AppBar(title: Text('Flutter Card Example')),
           body: Center(
             child: Container(
-              width: 400,
+              width: double.infinity,
               height: 180,
               padding: new EdgeInsets.all(5.0),
               // Using a Gradient Colors in Container Block
@@ -43,8 +43,8 @@ class _AccountScreenState extends State<AccountScreen> {
                             "https://cecbilaspur.ac.in/wp-content/uploads/2020/02/Engineering-1.png"),
                         radius: 22,
                       ),
-                      title:
-                          Text('Suraj Patel', style: TextStyle(fontSize: 25.0)),
+                      title: Text('Chouksey College',
+                          style: TextStyle(fontSize: 25.0)),
                       subtitle: Text(
                         'Branch:-\nComputer Science',
                         style: TextStyle(fontSize: 18.0),

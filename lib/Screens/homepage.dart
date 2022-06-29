@@ -57,10 +57,13 @@ class _HomePageState extends State<HomePage> {
                 color: Color.fromARGB(255, 21, 198, 9),
               ),
               child: CircleAvatar(
-                child: Icon(
-                  Icons.account_circle_rounded,
-                  size: 140,
-                ),
+                backgroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/73026702?v=4",
+                    scale: 0.5),
+                // child: Icon(
+                //   Icons.account_circle_rounded,
+                //   size: 140,
+                // ),
                 backgroundColor: Color.fromARGB(234, 123, 34, 56),
               ),
             ),
